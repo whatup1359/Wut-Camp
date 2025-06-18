@@ -1,8 +1,8 @@
-import LoadingCard from "@/components/card/LoadingCard"
+import { SkeletonCardHome } from "@/components/card/LoadingCard"
 
 const loading = () => {
   return (
-    <LoadingCard />
+    <SkeletonCardHome />
   )
 }
 export default loading

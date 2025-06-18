@@ -5,13 +5,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import OtherInfo from "./OtherInfo";
+import Image from "next/image";
 
 const Hero = ({ landmarks }: { landmarks: LandmarkCardProps[] }) => {
   return (
     <div>
       <Swiper
         autoplay={{
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -24,10 +26,20 @@ const Hero = ({ landmarks }: { landmarks: LandmarkCardProps[] }) => {
         {landmarks.map((landmark, index) => (
           
             <SwiperSlide key={index}>
-              <div className="group relative rounded-md overflow-hidden">
-                <img 
-                className="w-full h-[600px] object-cover brightness-80 group-hover:brightness-60 transition-all duration-400 ease-in-out"
-                src={landmark.image} />
+              <div className="group relative h-[300px] md:h-[400px] lg:h-[600px] rounded-md overflow-hidden mt-6">
+                <Image 
+                className="w-full object-cover group-hover:brightness-80 transition-all duration-400 ease-in-out"
+                src={landmark.image} 
+                fill
+                alt={landmark.name}
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 z-50">
+                <div className="col-span-4 mb-4 flex h-full flex-1
+                justify-end px-5 md:mb-4 md:justify-end md:px-10
+                ">
+                  <OtherInfo landmark={landmark} />
+                </div>
               </div>
             </SwiperSlide>
           

@@ -10,7 +10,7 @@ const SignOutLink = () => {
 
   return (
     <SignOutButton>
-      <button onClick={handleLogout} className="hover:bg-gray-100 hover:text-rose-500 rounded-md text-sm px-2 py-1.5 cursor-pointer w-full text-left">
+      <button onClick={handleLogout} className="hover:text-rose-500 rounded-md text-sm px-2 py-1.5 cursor-pointer w-full text-left">
         Logout
       </button>
     </SignOutButton>

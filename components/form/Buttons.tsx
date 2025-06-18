@@ -54,8 +54,8 @@ export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
   className={`cursor-pointer
     ${
       isFavorite
-      ? "bg-rose-500 hover:bg-rose-500/40"
-      : "bg-rose-500/40 hover:bg-rose-500"
+      ? "bg-rose-500 hover:bg-rose-500/40 transition duration-200"
+      : "bg-rose-500/40 hover:bg-rose-500 transition duration-200"
     }`}
   >
     {

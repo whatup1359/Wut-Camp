@@ -1,11 +1,12 @@
 import { Tent } from "lucide-react";
+import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="flex font-bold">
-      <Tent className="mr-4"/>
-      <h1 className="">W CAMP</h1>
-    </div>
+    <Link href={"/"} className="flex font-bold animate-pulse">
+      <Tent className="mr-4" />
+      <h1>W CAMP</h1>
+    </Link>
   );
 };
 export default Logo;

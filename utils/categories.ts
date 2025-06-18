@@ -10,31 +10,31 @@ import {
 
 export const categories = [
   {
-    label: "camping",
+    label: "Camping",
     icon: Tent,
   },
   {
-    label: "house",
+    label: "House",
     icon: House,
   },
   {
-    label: "hotel",
+    label: "Hotel",
     icon: Hotel,
   },
   {
-    label: "hostel",
+    label: "Hostel",
     icon: Bed,
   },
   {
-    label: "moutain",
+    label: "Mountain",
     icon: Mountain,
   },
   {
-    label: "store",
+    label: "Store",
     icon: Store,
   },
   {
-    label: "food",
+    label: "Food",
     icon: Utensils,
   },
 ];

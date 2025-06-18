@@ -11,8 +11,10 @@ import db from "@/utils/db";
 import { redirect } from "next/navigation";
 import { uploadFile } from "@/utils/supabase";
 import { revalidatePath } from "next/cache";
+import { unstable_cacheLife as nextCache } from "next/cache";
 
 const getAuthUser = async () => {
+  
   const user = await currentUser();
 
   if (!user) {
@@ -103,12 +105,42 @@ export const createLandmarkAction = async (
   redirect("/");
 };
 
-export const fetchLandmarks = async () => {
+export const fetchLandmarks = async ({
+  search = "",
+  category,
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  "use cache"
+  nextCache("hours")
+  const landmarks = await db.landmark.findMany({
+    where: {
+      category,
+      OR: [
+        { name: { contains: search, mode: "insensitive" } },
+        { description: { contains: search, mode: "insensitive" } },
+        { province: { contains: search, mode: "insensitive" } },
+        { category: { contains: search, mode: "insensitive" } },
+      ],
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return landmarks;
+};
+
+export const fetchLandmarksHero = async () => {
+  "use cache"
+  nextCache("hours")
   // code body
   const landmarks = await db.landmark.findMany({
     orderBy: {
       createdAt: "desc",
     },
+    take: 5
   });
 
   return landmarks;
@@ -191,3 +223,17 @@ export const fetchFavorites = async () => {
   });
   return favorites.map((favorite) => favorite.landmark);
 };
+
+
+export const fetchLandmarkDetail = async ({id}: {id: string}) => {
+  "use cache"
+  nextCache("hours")
+  return db.landmark.findFirst({
+    where: {
+      id: id
+    },
+    include: {
+      profile: true
+    }
+  })
+}
