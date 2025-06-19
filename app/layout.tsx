@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./Providers";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/footer/Footer";
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <main className="container">{children}</main>
+            <Footer />
           </Providers>
         </body>
       </html>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 
 const EmptyList = ({
-  heading = "No Result",
+  heading = "No Results",
   message = "Please Try Again",
   btnText = "Back Home",
 }: {

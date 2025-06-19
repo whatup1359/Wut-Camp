@@ -13,7 +13,7 @@ const CategoriesList = ({
   return (
     <>
       <div className="w-full px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 py-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 py-6">
           {categories.map((item) => {
             const isActive = item.label === category;
 
@@ -23,9 +23,9 @@ const CategoriesList = ({
                 key={item.label}
               >
                 <article
-                  className={`group flex flex-col gap-3 items-center justify-center p-4 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-800 ${
+                  className={`group flex flex-col gap-3 items-center justify-center p-4 rounded-lg transition-all duration-200 hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-110 border-2 border-gray-300 dark:border-gray-300/20 hover:bg-linear-to-b from-rose-200/10 to-rose-500/20 ${
                     category === item.label
-                      ? "bg-gray-200 dark:bg-gray-800"
+                      ? "bg-linear-to-b from-rose-200/10 to-rose-500/20"
                       : ""
                   } ${isActive ? "text-primary" : ""}`}
                 >

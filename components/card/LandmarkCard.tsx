@@ -10,7 +10,7 @@ const LandmarkCard = ({ landmark }: { landmark: LandmarkCardProps }) => {
   const CategoryIcon = categoryObj?.icon;
 
   return (
-    <article className="group relative rounded-md bg-gray-200 dark:bg-rose-300/10 hover:bg-linear-to-b from-rose-200/10 to-rose-500/20 hover:scale-110 transition-all duration-500 ease-in-out">
+    <article className="group relative rounded-md bg-gray-200 dark:bg-rose-300/10 hover:bg-linear-to-b from-rose-200/10 to-rose-500/20 hover:scale-110 transition-all duration-500 ease-in-out border-2 border-gray-300/20">
       <Link href={`/landmark/${id}`}>
         <div className="relative h-[300px] rounded-md m-3 shadow-lg shadow-black">
           <Image
