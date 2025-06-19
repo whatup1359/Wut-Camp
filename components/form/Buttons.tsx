@@ -47,23 +47,25 @@ export const SignInCardButton = () => {
 
 export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
   // console.log("is", isFavorite)
-  const { pending } = useFormStatus()
-  return <Button 
-  type="submit"
-  size="icon"
-  className={`cursor-pointer
+  const { pending } = useFormStatus();
+  return (
+    <Button
+      type="submit"
+      size="icon"
+      className={`cursor-pointer
     ${
       isFavorite
-      ? "bg-rose-500 hover:bg-rose-500/40 transition duration-200"
-      : "bg-rose-500/40 hover:bg-rose-500 transition duration-200"
+        ? "bg-rose-500 hover:bg-rose-500/40 transition duration-200"
+        : "bg-rose-500/40 hover:bg-rose-500 transition duration-200"
     }`}
-  >
-    {
-      pending
-      ? <LoaderCircle className="animate-spin" />
-      : isFavorite
-      ? <Heart fill="white" />
-      : <Heart />
-    }
-    </Button>;
+    >
+      {pending ? (
+        <LoaderCircle className="animate-spin" />
+      ) : isFavorite ? (
+        <Heart fill="white" />
+      ) : (
+        <Heart />
+      )}
+    </Button>
+  );
 };

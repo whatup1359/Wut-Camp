@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from "react-share";
@@ -88,7 +89,7 @@ const Footer = ({
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start animate-pulse">
               <Link href={logo.url}>
-                <img src={logo.src} alt={logo.alt} className="h-30" />
+                <Image src={logo.src} alt={logo.alt} className="h-30" />
               </Link>
               <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
