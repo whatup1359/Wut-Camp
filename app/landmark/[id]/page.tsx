@@ -6,7 +6,11 @@ import ImageContainer from "@/components/landmark/ImageContainer";
 import ShareButton from "@/components/landmark/ShareButton";
 import { redirect } from "next/navigation";
 
-const LandmarkDetail = async ({ params }: { params: Promise <{ id: string }> }) => {
+const LandmarkDetail = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
   const { id } = await params;
   const landmark = await fetchLandmarkDetail({ id });
   if (!landmark) redirect("/");
@@ -27,7 +31,10 @@ const LandmarkDetail = async ({ params }: { params: Promise <{ id: string }> }) 
       <ImageContainer mainImage={landmark.image} name={landmark.name} />
       {/* Detail */}
       <section>
-        <div className="">
+        <div className="relative">
+          <span className="absolute text-lg right-0 flex items-center dark:text-gray-200 bg-rose-500/20 rounded-md px-2 py-1">
+            {landmark.price.toLocaleString()} <span className="text-rose-500 ml-1">฿</span>
+          </span>
           <Description description={landmark.description} />
         </div>
       </section>

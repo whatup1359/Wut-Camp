@@ -28,7 +28,7 @@ export const landmarkSchema = z.object({
   description: z
     .string()
     .min(2, { message: "รายละเอียดต้องมากกว่า 2 อักขระ" })
-    .max(300, { message: "รายละเอียดต้องน้อยกว่า 300 อักขระ" }),
+    .max(1000, { message: "รายละเอียดต้องน้อยกว่า 1000 อักขระ" }),
   price: z.coerce.number().int().min(0, { message: "ราคาต้องมากกว่า 0" }),
   province: z.string(),
   lat: z.coerce.number(),

@@ -77,7 +77,7 @@ const Footer = ({
   sections = defaultSections,
   description = "Please Follow Us",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2025 w-camp.com. All rights reserved.",
+  copyright = "© 2025 w-camp All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
