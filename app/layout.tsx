@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./Providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/footer/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -32,7 +33,10 @@ export default function RootLayout({
         >
           <Providers>
             <Navbar />
-            <main className="container">{children}</main>
+            <main className="container">
+              {children}
+              <SpeedInsights />
+            </main>
             <Footer />
           </Providers>
         </body>
