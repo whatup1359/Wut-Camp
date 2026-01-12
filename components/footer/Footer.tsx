@@ -85,7 +85,7 @@ const Footer = ({
     url: "wut-camp.vercel.app",
     src: "https://sayitwithapin.com/cdn/shop/files/Mockup-29.png?v=1743663398",
     alt: "",
-    title: "wut-camp.vercel.com",
+    title: "wut-camp.vercel.app",
   },
   sections = defaultSections,
   description = "Please Follow Us",
@@ -100,7 +100,7 @@ const Footer = ({
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start animate-pulse">
-              <Link href={logo.url}>
+              <div>
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -108,7 +108,7 @@ const Footer = ({
                   height={100}
                   className="h-30"
                 />
-              </Link>
+              </div>
               <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
 
@@ -123,9 +123,9 @@ const Footer = ({
                     key={idex}
                     className="hover:text-primary font-medium hover:scale-110 transition duration-200"
                   >
-                    <Link href={social.href} aria-label={social.label}>
+                    <a href={social.href} aria-label={social.label}>
                       {social.icon}
-                    </Link>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -156,7 +156,7 @@ const Footer = ({
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idex) => (
               <li key={idex} className="hover:text-primary">
-                <Link href={link.href}>{link.name}</Link>
+                <a href={link.href}>{link.name}</a>
               </li>
             ))}
           </ul>
