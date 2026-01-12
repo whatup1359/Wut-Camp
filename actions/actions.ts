@@ -11,7 +11,7 @@ import db from "@/utils/db";
 import { redirect } from "next/navigation";
 import { uploadFile } from "@/utils/supabase";
 import { revalidatePath } from "next/cache";
-import { unstable_cacheLife as nextCache } from "next/cache";
+import { cacheLife } from "next/cache";
 
 const getAuthUser = async () => {
   
@@ -113,7 +113,7 @@ export const fetchLandmarks = async ({
   category?: string;
 }) => {
   "use cache"
-  nextCache("hours")
+  cacheLife("hours")
   const landmarks = await db.landmark.findMany({
     where: {
       category,
@@ -134,7 +134,7 @@ export const fetchLandmarks = async ({
 
 export const fetchLandmarksHero = async () => {
   "use cache"
-  nextCache("hours")
+  cacheLife("hours")
   // code body
   const landmarks = await db.landmark.findMany({
     orderBy: {
@@ -227,7 +227,7 @@ export const fetchFavorites = async () => {
 
 export const fetchLandmarkDetail = async ({id}: {id: string}) => {
   "use cache"
-  nextCache("hours")
+  cacheLife("hours")
   return db.landmark.findFirst({
     where: {
       id: id
