@@ -40,7 +40,7 @@ export const SkeletonCard = () => {
 export const SkeletonHero = () => {
   return (
     <div>
-      <Skeleton className="h-[300px] md:h-[400px] lg:h-[600px] w-full rounded-md mb-2" />
+      <Skeleton className="h-[300px] md:h-[400px] lg:h-[700px] w-full rounded-md mb-2" />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4 md:gap-7 py-6">
         <Skeleton className="w-full h-24 px-16 rounded-lg" />
         <Skeleton className="w-full h-24 px-16 rounded-lg" />

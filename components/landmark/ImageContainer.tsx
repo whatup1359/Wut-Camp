@@ -8,14 +8,14 @@ const ImageContainer = ({
   name: string;
 }) => {
   return (
-    <section className="relative h-[300px] md:h-[500px] mt-8">
+    <section className="relative h-[300px] md:h-[600px] mt-8">
       <Image
         src={mainImage}
         sizes="100vw"
         alt={name}
         fill
         priority
-        className="object-cover rounded-md"
+        className="rounded-md"
       />
     </section>
   );

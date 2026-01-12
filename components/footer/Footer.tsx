@@ -58,9 +58,21 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FacebookIcon className="size-7 rounded-md" />, href: "https://www.facebook.com/si.tang.su.baw.thxng/", label: "Facebook" },
-  { icon: <TwitterIcon className="size-7 rounded-md" />, href: "#", label: "Twitter" },
-  { icon: <LinkedinIcon className="size-7 rounded-md" />, href: "#", label: "LinkedIn" },
+  {
+    icon: <FacebookIcon className="size-7 rounded-md" />,
+    href: "#",
+    label: "Facebook",
+  },
+  {
+    icon: <TwitterIcon className="size-7 rounded-md" />,
+    href: "#",
+    label: "Twitter",
+  },
+  {
+    icon: <LinkedinIcon className="size-7 rounded-md" />,
+    href: "#",
+    label: "LinkedIn",
+  },
 ];
 
 const defaultLegalLinks = [
@@ -89,7 +101,13 @@ const Footer = ({
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start animate-pulse">
               <Link href={logo.url}>
-                <Image src={logo.src} alt={logo.alt} width={130} height={100} className="h-30" />
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={130}
+                  height={100}
+                  className="h-30"
+                />
               </Link>
               <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
@@ -101,7 +119,10 @@ const Footer = ({
 
               <div className="text-muted-foreground flex items-center space-x-2">
                 {socialLinks.map((social, idex) => (
-                  <div key={idex} className="hover:text-primary font-medium hover:scale-110 transition duration-200">
+                  <div
+                    key={idex}
+                    className="hover:text-primary font-medium hover:scale-110 transition duration-200"
+                  >
                     <Link href={social.href} aria-label={social.label}>
                       {social.icon}
                     </Link>
@@ -109,7 +130,6 @@ const Footer = ({
                 ))}
               </div>
             </div>
-
           </div>
 
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
